@@ -1,0 +1,4 @@
+htdocs/app/code/community/Easy/MultipleDomains/* app/code/community/Easy/MultipleDomains/
+htdocs/app/etc/modules/Easy_MultipleDomains.xml app/etc/modules/Easy_MultipleDomains.xml
+htdocs/app/locale/en_US/Easy_MultipleDomains.csv app/locale/en_US/Easy_MultipleDomains.csv
+htdocs/app/locale/fr_FR/Easy_MultipleDomains.csv app/locale/fr_FR/Easy_MultipleDomains.csv

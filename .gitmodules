@@ -1,0 +1,6 @@
+[submodule "develop/vagrant"]
+	path = develop/vagrant
+	url = https://github.com/Easycom-Solutions/vagrant-box.git
+[submodule "develop/travis"]
+	path = develop/travis
+	url = https://github.com/Easycom-Solutions/travis-scripts.git

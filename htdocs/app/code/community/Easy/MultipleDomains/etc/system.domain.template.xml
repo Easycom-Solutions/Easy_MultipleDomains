@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Easycom Solutions
+ * @category  Easy
+ * @package   Easy_MultipleDomains
+ * @copyright 1995-2015 Easycom Solutions (http://www.groupe-easycom.com/)
+ * @license   http://opensource.org/licenses/MIT  The MIT License (MIT)
+ */
+ 
+ /**
+  * Template file for groups of easy_multipledomains config section
+  */
+-->
+<easy_multipledomains_XXXXXX module="easy_multipledomains" translate="label"> 
+    <label>Domain XXXXXX</label>
+    <frontend_type>text</frontend_type>
+    <sort_order>XXXXXX</sort_order>
+    <show_in_default>1</show_in_default>
+    <fields>
+        <enabled module="easy_multipledomains" translate="label">
+            <label>Enabled</label>
+            <frontend_type>select</frontend_type>
+            <source_model>adminhtml/system_config_source_yesno</source_model>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+        </enabled>
+        <base_url module="easy_multipledomains"  translate="label comment">
+            <label>Domain</label>
+            <frontend_type>text</frontend_type>
+            <sort_order>20</sort_order>
+            <show_in_default>1</show_in_default>
+            <comment><![CDATA[Domain to replace the default one in secure/base_url and unsecure/base_url]]></comment>
+        </base_url>
+        <design_package module="easy_multipledomains"  translate="label comment">
+            <label>Design package</label>
+            <frontend_type>text</frontend_type>
+            <sort_order>30</sort_order>
+            <show_in_default>1</show_in_default>
+            <comment><![CDATA[Design package, allow to change de template used for the domain]]></comment>
+        </design_package>
+        <design_theme module="easy_multipledomains"  translate="label comment">
+            <label>Design Theme</label>
+            <frontend_type>text</frontend_type>
+            <sort_order>40</sort_order>
+            <show_in_default>1</show_in_default>
+            <comment><![CDATA[Design template in the specified package, allow to change de template used for the domain]]></comment>
+        </design_theme>
+        <disable_secure module="easy_multipledomains"  translate="label comment">
+            <label>Disable https for the domain</label>
+            <frontend_type>select</frontend_type>
+            <source_model>adminhtml/system_config_source_yesno</source_model>
+            <sort_order>50</sort_order>
+            <show_in_default>1</show_in_default>
+            <comment><![CDATA[Disable https for this domain, could be usefull if your certificate doesn't handle the domain]]></comment>
+        </disable_secure>
+    </fields>
+</easy_multipledomains_XXXXXX>

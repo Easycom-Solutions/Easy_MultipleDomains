@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- initial phpunit configuration file, that you can modify for your project needs -->
+<phpunit cacheTokens="true"
+         colors="true"
+         verbose="true"
+         bootstrap="develop/vendor/autoload.php">
+  <testsuites>
+    <testsuite name="MultipleDomains">
+       <file>htdocs/app/code/community/Easy/MultipleDomains/Tests/SeleniumTest.php</file>  
+      <!--<file>htdocs/app/code/community/Easy/MultipleDomains/Tests/SaucelabTest.php</file> -->
+    </testsuite>
+  </testsuites>
+  <filter>
+    <blacklist>
+      <directory suffix=".php">develop/vendor/</directory>
+    </blacklist>  
+  </filter>
+  <logging>
+    <log type="coverage-clover" target="coverage.clover"/>
+  </logging>
+</phpunit>

@@ -1,0 +1,24 @@
+checks:
+    php:
+        code_rating: true
+        duplication: true
+filter:
+    paths:
+        - 'htdocs/*'
+tools:
+    external_code_coverage:
+        timeout: 7200
+    php_code_coverage: true
+    php_code_sniffer:
+        config:
+            standard: 'Zend'
+    php_changetracking: false
+    php_sim: true
+    php_cs_fixer: true
+    php_mess_detector: true
+    php_pdepend: true
+
+    # https://scrutinizer-ci.com/docs/tools/php/php-analyzer/config_reference
+    php_analyzer:
+        enabled: true
+    sensiolabs_security_checker: true

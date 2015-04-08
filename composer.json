@@ -1,0 +1,16 @@
+{
+    "name": "easycom/magento-multipledomains",
+    "type": "magento-module",
+    "description": "A module for magento 1.7+ that add the possibility to handle multiple domains for the same store",
+    "homepage": "https://github.com/easycom-solutions/Easy_MultipleDomains",
+    "license": "The MIT License (MIT)",
+    "authors": [
+        {
+            "name": "Emilien T",
+            "email": "xmedias@groupe-easycom.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer":"*"
+    }
+}

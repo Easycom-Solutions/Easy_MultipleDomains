@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Easycom Solutions
+ * @category  Easy
+ * @package   Easy_MultipleDomains
+ * @copyright 1995-2015 Easycom Solutions (http://www.groupe-easycom.com/)
+ * @license   http://opensource.org/licenses/MIT  The MIT License (MIT)
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <easy_multipledomains translate="title" module="easy_multipledomains">
+                                        <title>Easycom Solutions - Multiple Domains Section</title>
+                                    </easy_multipledomains>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,50 @@
+language: php
+php:
+# We don't test on previous versions of php because our test use traits, which is a new functionnality of PHP5.4
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7
+  - nightly
+matrix:
+  allow_failures:
+    - php: 7
+    - php: nightly
+
+env:
+  matrix:
+    - MAGENTO_VERSION="magento-ce-1.9.1.0"
+    - MAGENTO_VERSION="magento-ce-1.9.0.1"
+    - MAGENTO_VERSION="magento-ce-1.8.1.0"
+    - MAGENTO_VERSION="magento-ce-1.8.0.0"
+    - MAGENTO_VERSION="magento-ce-1.7.0.2"
+    - MAGENTO_VERSION="magento-ce-1.6.2.0"
+    - MAGENTO_VERSION="magento-mirror-1.5.1.0"
+    - MAGENTO_VERSION="magento-mirror-1.4.2.0"
+  global:
+    - secure: Mg1sCyyWf81+LwSj8mljmUdO3knMHJV/nJnOGaTbseESYIJsq/Np67Tnnxz98SGJNqufeqUaYzNQVe7BZLhwMNA5sZ8qMEk64dbjQlSUY+aOP8Lzrve60gO7PFen/BE+PaWbVUq0j1nBiI/F3mLvQHCuP187TJbfCmAfY8s90zs=
+    - secure: "iAOnuHtt4sBiP6ZNrMZBpq48XvqjnkgzudtWrACBBbBbSYdyDwjpHJohQ/xVJKsLGwWjY6HfBzdJuv4k3CI5+AGafuf+5Ur29xGnrUOeynqSRa+nlJH7QnTXIlQL+HKf6S8tEzboZtSLx07pDlbxBctkMyemAaazU/tbM5i+YAQ="
+    - secure: "Tr35aTV1R9frDypH1AvGP7GqWA7cljnekMSx3vMR5FAJCwiHLGuBPpWNMdhi97cImuyhqoAaCzlrbFvAVQbwswivNdKXS5/3DfGFvf3lTWDkLE7BVTvv7bjgsPat1tH8ja/QxtNBuGRuqTNiEKbjV7RtTs1k/B1hpHzUvy1aQ9s="
+
+install:
+  - export SAUCE_TUNNEL_IDENTIFIER=$TRAVIS_JOB_NUMBER
+  - export SAUCE_DONT_VERIFY_CERTS=1
+  - if [[ $TRAVIS_PHP_VERSION = '5.6' && $MAGENTO_VERSION = 'magento-ce-1.9.1.0' ]]; then export PHPUNIT_COVERAGE_ENABLE=1; fi
+  - sudo sh -c 'echo "127.0.0.1 easymd md.easy.local md1.easy.local md2.easy.local md3.easy.local" >> /etc/hosts'
+  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('password') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+  - bash develop/travis/install-composer.sh $TRAVIS_BUILD_DIR/develop
+  - bash develop/travis/install-apache.sh $TRAVIS_BUILD_DIR
+  - bash develop/travis/install-selenium-server.sh
+  - bash develop/travis/install-magento.sh --magento-db-dbpass='password' --magento-baseurl=md.easy.local
+  - bash develop/apply-patchs.sh $TRAVIS_BUILD_DIR
+
+script: bin/phpunit
+
+after_script:
+  - sudo cat /var/log/selenium/output.log && sudo cat /var/log/selenium/error.log
+  - ps aux
+  - cat coverage.clover
+  - if [[ $TRACE_CODE_COVERAGE=1 ]]; then wget https://scrutinizer-ci.com/ocular.phar; php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
+
+addons:
+  sauce_connect: true

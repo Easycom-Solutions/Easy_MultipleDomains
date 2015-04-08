@@ -1,0 +1,77 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    # Every Vagrant virtual environment requires a box to build off of.
+    config.vm.box = "easycom/debian7"
+
+    # Enable to check if the bow is outdated 
+    config.vm.box_check_update = true
+  
+    # Configure the ram and cpu allocations
+    config.vm.provider "virtualbox" do |v|
+        v.memory = 2048
+        v.cpus = 2
+    end
+
+    config.vm.define "easymd" do |server|
+        server.vm.network :private_network, :ip => '192.168.120.52'
+        server.vm.hostname = "easymd"
+        server.hostmanager.aliases = "md.easy.local md1.easy.local md2.easy.local md3.easy.local"
+        
+        server.vm.synced_folder "../", "/vagrant"
+
+        server.vm.provision :shell, inline: 'sudo mkdir -p /var/www'    
+        server.vm.synced_folder "../htdocs", "/vagrant-nfs", type: "nfs"
+        server.bindfs.bind_folder "/vagrant-nfs", "/var/www/htdocs",
+            force_user: "www-data",
+            force_group: "www-data",
+            create_as_user: true,
+            chmod_normal: true
+
+        _args="
+            --install-mysql-server=yes
+            --mysql-root-password=vagrant
+            --mysql-allow-remote=yes
+            --mysql-allow-remote-root=yes
+            --mysql-createdb=no
+
+            --install-apache=yes
+            --apache-port=80
+            --apache-port-ssl=443
+            --apache-tools-secure=no
+            --apache-localhost-aliases='md.easy.local md1.easy.local md2.easy.local md3.easy.local'
+            --apache-localhost-forcessl=no
+
+            --install-php=yes
+            --php-version=php56
+            --php-opcache-memory=128
+            --php-opcache-max-accelerated-files=12000
+            --php-install-xdebug=yes
+            --php-install-composer=yes
+            --php-install-n98magerun=yes
+
+            --install-phpmyadmin=yes
+            --phpmyadmin-server-ip=127.0.0.1
+            --phpmyadmin-server-port=3306
+            --phpmyadmin-server-user=root
+            --phpmyadmin-server-password=vagrant
+            --phpmyadmin-auth-type=config
+
+            --install-mailcatcher=yes         
+        "
+        server.vm.provision :shell, path: "./vagrant/bootstrap.sh", args: _args.gsub(/\s+/, " ").strip
+        server.vm.provision :shell, path: "./travis/install-magento.sh", args: "--magento-baseurl=md.easy.local"
+    end
+
+    if Vagrant.has_plugin?('vagrant-hostmanager')
+        config.hostmanager.enabled = false
+        config.vm.provision :hostmanager
+        config.hostmanager.manage_host = true
+        config.hostmanager.ignore_private_ip = false
+        config.hostmanager.include_offline = true
+    end
+end

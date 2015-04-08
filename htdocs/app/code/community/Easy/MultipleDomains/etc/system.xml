@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Easycom Solutions
+ * @category  Easy
+ * @package   Easy_MultipleDomains
+ * @copyright 1995-2015 Easycom Solutions (http://www.groupe-easycom.com/)
+ * @license   http://opensource.org/licenses/MIT  The MIT License (MIT)
+ */
+-->
+
+<config>
+    <tabs>
+        <easy>
+            <label><![CDATA[<img style="width:202px; height:23px;" alt="Logo Easygento" title="Easygento by Easycom Solutions" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAAcCAYAAABSzUIsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExODc1Njg2NEI4RURDM0NERSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3QkYwQzc3NEI1M0MxMUU0QjVEMUIzRkU0NTU4MzE5MyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3QkYwQzc3M0I1M0MxMUU0QjVEMUIzRkU0NTU4MzE5MyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAxODAxMTc0MDcyMDY4MTE4QTZEQjU2RDIxRDJFMjczIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAxODAxMTc0MDcyMDY4MTE4NzU2ODY0QjhFREMzQ0RFIi8+IDwvcmRmOkRlc2NyaXB0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"/>]]></label>
+            <sort_order>110</sort_order>
+        </easy>
+    </tabs>
+    
+    <sections>
+        <easy_multipledomains module="easy_multipledomains" translate="label">
+            <label>Multiple Domains</label>
+            <tab>easy</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general module="easy_multipledomains" translate="label">
+                    <label>Global Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <number_of_domains module="easy_multipledomains" translate="label comment">
+                            <label>Number of domains</label>
+                            <backend_model>easy_multipledomains/config_general_numberOfDomains</backend_model>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <validate>validate-not-negative-number</validate>
+                            <comment><![CDATA[Number of domains that magento will handle as the same way than Base_URL domain. <br/>Be carefull if you reduce the limit, all configuration over the new limit will be erase.]]></comment>
+                            <show_in_default>1</show_in_default>
+                        </number_of_domains>        
+                    </fields>
+                </general>
+            </groups>
+        </easy_multipledomains>
+    </sections>
+</config>
