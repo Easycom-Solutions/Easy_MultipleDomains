@@ -1,11 +1,8 @@
 language: php
 php:
 # We don't test on previous versions of php because our test use traits, which is a new functionnality of PHP5.4
-  - 5.4
-  - 5.5
   - 5.6
-  - 7
-  - nightly
+
 matrix:
   allow_failures:
     - php: 7
@@ -14,13 +11,7 @@ matrix:
 env:
   matrix:
     - MAGENTO_VERSION="magento-ce-1.9.1.0"
-    - MAGENTO_VERSION="magento-ce-1.9.0.1"
-    - MAGENTO_VERSION="magento-ce-1.8.1.0"
-    - MAGENTO_VERSION="magento-ce-1.8.0.0"
-    - MAGENTO_VERSION="magento-ce-1.7.0.2"
-    - MAGENTO_VERSION="magento-ce-1.6.2.0"
-    - MAGENTO_VERSION="magento-mirror-1.5.1.0"
-    - MAGENTO_VERSION="magento-mirror-1.4.2.0"
+    
   global:
     - secure: Mg1sCyyWf81+LwSj8mljmUdO3knMHJV/nJnOGaTbseESYIJsq/Np67Tnnxz98SGJNqufeqUaYzNQVe7BZLhwMNA5sZ8qMEk64dbjQlSUY+aOP8Lzrve60gO7PFen/BE+PaWbVUq0j1nBiI/F3mLvQHCuP187TJbfCmAfY8s90zs=
     - secure: "iAOnuHtt4sBiP6ZNrMZBpq48XvqjnkgzudtWrACBBbBbSYdyDwjpHJohQ/xVJKsLGwWjY6HfBzdJuv4k3CI5+AGafuf+5Ur29xGnrUOeynqSRa+nlJH7QnTXIlQL+HKf6S8tEzboZtSLx07pDlbxBctkMyemAaazU/tbM5i+YAQ="

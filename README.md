@@ -1,9 +1,9 @@
 # Easy_MultipleDomains - Module for Magento 1.4+
 
-[![Build Status](https://travis-ci.org/easycom-xmedias/Easy_MultipleDomains.svg?branch=master)](https://travis-ci.org/emilient/Easy_MultipleDomains)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/easycom-xmedias/Easy_MultipleDomains/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/emilient/Easy_MultipleDomains/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/easycom-xmedias/Easy_MultipleDomains/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/emilient/Easy_MultipleDomains/?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/54ff26e54a10643473000042/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54ff26e54a10643473000042)
+[![Build Status](https://travis-ci.org/Easycom-Solutions/Easy_MultipleDomains.svg?branch=master)](https://travis-ci.org/Easycom-Solutions/Easy_MultipleDomains)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Easycom-Solutions/Easy_MultipleDomains/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Easycom-Solutions/Easy_MultipleDomains/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/Easycom-Solutions/Easy_MultipleDomains/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Easycom-Solutions/Easy_MultipleDomains/?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/55254533529844e503000155/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55254533529844e503000155)
 
 [![Latest Stable Version](https://poser.pugx.org/easycom/magento-multipledomains/v/stable.svg)](https://packagist.org/packages/easycom/magento-multipledomains) 
 [![Total Downloads](https://poser.pugx.org/easycom/magento-multipledomains/downloads.svg)](https://packagist.org/packages/easycom/magento-multipledomains) 
